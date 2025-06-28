@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ruochen-en-onepage.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+<link rel="stylesheet" href="file:///Users/chenruochen/Downloads/lapis-cv-vscode-v2.0.0/lapis-cv/styles/main.css" type="text/css"><link rel="stylesheet" href="file:///Users/chenruochen/Downloads/lapis-cv-vscode-v2.0.0/lapis-cv/styles/lapis-cv-serif.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="ruochen-chen">Ruochen Chen</h1>
+<blockquote>
+<p><span class="icon"></span> <code>+86 13738337771</code>  
+<span class="icon"></span> <code>ruocchen1220@gmail.com</code>  
+<span class="icon"></span> <a href="https://github.com/Crc011220">GitHub</a>  
+<span class="icon"></span> <a href="https://blog.rcchen.dpdns.org">Blog</a></p>
+</blockquote>
+<!-- <img class="avatar" src=""> -->
+<h2 id="%EE%A0%8C-education"> Education</h2>
+<div class="entry-title">
+    <h3>University of Melbourne - Master of Information Technology</h3> 
+    <p>2024.02 - 2025.12</p>
+</div>
+Specialization in Computing
+<p>Core Courses: Programming and Software Development, Computer Networks, Data Structures and Algorithms, Database Systems, Distributed Systems, Cluster and Cloud Computing, Declarative Programming, Machine Learning, Software Processes and Management, Information Visualization, etc.</p>
+<div class="entry-title">
+    <h3>University of Melbourne - Bachelor of Arts</h3> 
+    <p>2020.08 - 2023.12</p>
+</div>
+Major in Psychology, Minor in Economics
+<h2 id="%EE%98%98-work-experience"> Work Experience</h2>
+<div alt="entry-title">
+    <h3>Full-Stack Development Intern - JD.com</h3> 
+    <p>2025.05 - 2025.07</p>
+</div>
+<ul>
+<li><strong>Distributed Scheduling Engine Development.</strong> Built core scheduling engine using Spring Boot + XXL-JOB, supporting Cron expression configuration and task failover, achieving 99.9% high availability. Designed multi-level fault-tolerant architecture (application cluster + database master-slave) ensuring zero single point of failure and uninterrupted service operation.</li>
+<li><strong>Security &amp; Quality System Construction.</strong> Implemented RBAC permission management (Spring Security + JWT) with fine-grained operation access control. Integrated GitHub Actions CI + JUnit 5 unit testing, improving code quality and deployment efficiency.</li>
+<li><strong>Visual Monitoring System Development.</strong> Built frontend monitoring dashboard using React + TypeScript, integrating real-time task status, log queries, and performance statistical charts. Optimized operation workflows, reducing troubleshooting time by 40%.</li>
+</ul>
+<div alt="entry-title">
+    <h3>Full-Stack Development Intern - China Merchants Bank</h3> 
+    <p>2024.11 - 2025.02</p>
+</div>
+<ul>
+<li><strong>High-Concurrency Data Processing Framework.</strong> Developed universal Excel processing framework (Spring Boot) supporting multi-structure header parsing. Achieved stable import/export of 100K+ records through asynchronous sharding + cache optimization (Redis), supporting 5+ business modules.</li>
+<li><strong>Intelligent Document Review System.</strong> Built automated document generation and validation workflow based on Prompt Engineering + knowledge base. Reduced manual review by 75%, improving R&amp;D document standardization and delivery efficiency.</li>
+<li><strong>Unified Message Hub Development.</strong> Constructed microservice notification system (Nacos), encapsulating email/SMS/app message components. Supports dynamic scaling, enhancing cross-system message consistency and maintainability.</li>
+</ul>
+<div class="entry-title">
+    <h3>Information Technology Intern - AAkonsult PTY LTD</h3> 
+    <p>2024.07 - 2024.11</p>
+</div>
+<ul>
+<li><strong>Full-Stack Payment Portal Development.</strong> Developed payment form portal based on Salesforce Experience Cloud + React; optimized interaction flow, improving user operation fluency by 30%+.</li>
+<li><strong>Automation &amp; Data Cleansing.</strong> Developed batch analysis scripts using Python, optimizing knowledge base data cleansing efficiency; React tools enabling real-time user input validation and one-click export.</li>
+<li><strong>Backend Logic &amp; Prototype Design.</strong> Developed data query APIs and functionalities using Apex; designed high-fidelity prototypes with Figma, increasing average user session duration.</li>
+</ul>
+<h2 id="%EE%98%B5-project-experience"> Project Experience</h2>
+<div class="entry-title">
+    <h3>Cryptocurrency Trading Platform</h3>
+    <a href="https://github.com/Crc011220/coin-exchange">GitHub</a>
+</div>
+<ul>
+<li><strong>Microservice Architecture &amp; High-Concurrency Core.</strong> Built microservice architecture using Spring Cloud + Nacos, implementing service registration/configuration center and load balancing. Matching engine uses RocketMQ + Disruptor for asynchronous order processing, supporting 100K+ TPS; integrated WebSocket (Tio) for real-time market data streaming.</li>
+<li><strong>Security &amp; Distributed Systems.</strong> Designed OAuth2 + JWT authentication system with cross-service authorization. Implemented distributed global ID system based on Snowflake algorithm; achieved distributed locking and caching through JetCache + Redis.</li>
+<li><strong>Cloud-Native Deployment &amp; Performance Optimization.</strong> Containerized deployment to AWS EC2 using Docker, integrated S3 storage/SNS notifications. Implemented efficient K-line data management based on Redis List, supporting tens of millions of data entries; automated historical data compression through scheduled tasks, reducing storage costs by 40%.</li>
+</ul>
+<div class="entry-title">
+    <h3>Lightweight RPC Framework</h3> 
+    <a href="https://github.com/Crc011220/RPC">GitHub</a>
+</div>
+<ul>
+<li><strong>High-Performance Network Communication.</strong> Implemented non-blocking network communication based on Netty NIO, improving throughput by 3x+ (compared to BIO); designed custom protocol supporting multiple serialization schemes (Java native/JSON).</li>
+<li><strong>Service Governance Core Mechanisms.</strong> Integrated Zookeeper for service registration and discovery, Redis caching node data ensuring high availability; developed dynamic proxy invocation layer simplifying client call process.</li>
+<li><strong>Traffic Scheduling Optimization.</strong> Implemented multiple load balancing algorithms (random/round-robin); supports second-level service circuit breaking and automatic traffic switching.</li>
+</ul>
+<div class="entry-title">
+    <h3>Cloud Computing Data Analytics Platform</h3> 
+</div>
+<ul>
+<li><strong>Cloud-Native Architecture Deployment.</strong> Built high-availability cluster using Kubernetes + Docker on NeCTAR cloud, implemented scheduled data collection tasks (social media platforms) through Fission. Auto-scaling container replicas ensuring elastic resource scheduling.</li>
+<li><strong>Real-Time Search Engine Development.</strong> Built Elasticsearch distributed search system supporting efficient indexing and second-level retrieval of tens of millions of data entries.</li>
+<li><strong>Intelligent Data Analytics Engine.</strong> Integrated Python NLP toolkit (NLTK/VADER/TextBlob) for sentiment analysis/keyword extraction/text classification tasks. Jupyter Notebook provides dynamic visualization analysis interface.</li>
+</ul>
+<h2 id="%EE%B3%BA-technical-skills"> Technical Skills</h2>
+<ul>
+<li><strong>Language Proficiency:</strong> Fluent in English, can be used as working language.</li>
+<li><strong>Professional Skills:</strong>
+<ul>
+<li><strong>Java Ecosystem.</strong> In-depth mastery: JVM (memory/GC/class loading), multithreading, collections framework; Framework ecosystem: Spring Boot/Spring MVC/MyBatis-Plus (IOC/AOP).</li>
+<li><strong>Microservice Architecture.</strong> Component capabilities: Spring Cloud (Nacos/OpenFeign); Message middleware: RocketMQ/Kafka (dead letter queues/message reliability).</li>
+<li><strong>Database.</strong> MySQL: index optimization/transaction isolation/locking mechanisms; Redis: core data types/caching strategies (penetration/breakdown/avalanche solutions); Cloud storage: AWS/Alibaba Cloud (AWS Cloud Practitioner certified).</li>
+<li><strong>Infrastructure.</strong> Containerization: Docker/Kubernetes + Serverless architecture; Network protocols: TCP/IP model, HTTP/TCP/UDP/DNS; Linux operations: common commands/system management.</li>
+<li><strong>Extended Capabilities.</strong> Design patterns: Singleton/Factory/Strategy/Observer/Decorator; AI integration: LangChain/Spring AI basic development; Frontend collaboration: Vue/React/Next.js/TailWind CSS (full-stack requirement support).</li>
+</ul>
+</li>
+<li><strong>Interests &amp; Hobbies:</strong> Saxophone (10+ years), Fitness (4+ years), Chess.</li>
+</ul>
+
+</body>
+</html>

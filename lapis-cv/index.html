@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ruochen-cn-onepage.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+<link rel="stylesheet" href="file:///Users/chenruochen/Downloads/lapis-cv-vscode-v2.0.0/lapis-cv/styles/main.css" type="text/css"><link rel="stylesheet" href="file:///Users/chenruochen/Downloads/lapis-cv-vscode-v2.0.0/lapis-cv/styles/lapis-cv-serif.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E9%99%88%E8%8B%A5%E5%B0%98">陈若尘</h1>
+<blockquote>
+<p><span class="icon"></span> <code>+86 13738337771</code>  
+<span class="icon"></span> <code>ruocchen1220@gmail.com</code>  
+<span class="icon"></span> <a href="https://github.com/Crc011220">GitHub</a>  
+<span class="icon"></span> <a href="https://blog.rcchen.dpdns.org">Blog</a></p>
+</blockquote>
+<!-- <img class="avatar" src=""> -->
+<h2 id="%EE%A0%8C-%E6%95%99%E8%82%B2%E7%BB%8F%E5%8E%86"> 教育经历</h2>
+<div class="entry-title">
+    <h3>墨尔本大学 - 信息技术硕士</h3> 
+    <p>2024.02 - 2025.12</p>
+</div>
+计算方向
+<p>核心课程: 编程与软件开发，计算机网络，数据结构与算法，数据库系统，分布式系统，集群与云计算，声明式编程，机器学习，软件过程与管理，信息可视化等</p>
+<div class="entry-title">
+    <h3>墨尔本大学 - 文学学士</h3> 
+    <p>2020.08 - 2023.12</p>
+</div>
+主修心理学，辅修经济学
+<h2 id="%EE%98%98-%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%86"> 实习经历</h2>
+<div alt="entry-title">
+    <h3>全栈开发实习生 - 京东</h3> 
+    <p>2025.05 - 2025.07</p>
+</div>
+<ul>
+<li>分布式调度引擎开发。基于 Spring Boot + XXL-JOB 构建核心调度引擎，支持Cron表达式配置与任务失效转移，实现99.9%高可用。设计多级容错架构（应用集群+数据库主从），保障零单点故障与服务不间断运行；</li>
+<li>安全与质量体系搭建。实现 RBAC 权限管理（Spring Security + JWT），完成细粒度操作权限控制。集成GitHub Actions 持续集成 + JUnit 5 单元测试，提升代码质量与部署效率；</li>
+<li>可视化监控系统开发。采用 React + TypeScript 构建前端监控面板，集成实时任务状态、日志查询与性能统计图表。优化运维流程，降低故障排查时间40%。</li>
+</ul>
+<div alt="entry-title">
+    <h3>全栈开发实习生 - 招商银行</h3> 
+    <p>2024.11 - 2025.02</p>
+</div>
+<ul>
+<li>高并发数据处理框架。开发通用Excel处理框架（Spring Boot），支持多结构表头解析。通过异步分片+缓存优化（Redis），实现10万级数据稳定导入导出，支撑5+业务模块；</li>
+<li>智能文档审核系统。基于Prompt Engineering+知识库构建自动化文档生成与校验流程。减少75%人工审核，提升研发文档规范性与交付效率；</li>
+<li>统一消息中台开发。构建微服务通知系统（Nacos），封装邮件/SMS/应用消息组件。支持动态扩展，提升系统间消息统一性与可维护性。</li>
+</ul>
+<div class="entry-title">
+    <h3>信息技术实习生 - AAkonsult PTY LTD</h3> 
+    <p>2024.07 - 2024.11</p>
+</div>
+<ul>
+<li>全栈支付门户开发。基于Salesforce Experience Cloud + React开发支付表单门户；优化交互流程，提升用户操作流畅性30%+；</li>
+<li>自动化与数据清洗。使用Python开发批量分析脚本，优化知识库数据清洗效率；React工具实现用户输入实时校验与一键导出；</li>
+<li>后端逻辑与原型设计。Apex开发数据查询接口与功能；Figma设计高保真原型，提升用户平均停留时长。</li>
+</ul>
+<h2 id="%EE%98%B5-%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86"> 项目经历</h2>
+<div class="entry-title">
+    <h3>加密货币交易平台</h3>
+    <a href="https://github.com/Crc011220/coin-exchange">GitHub</a>
+</div>
+<ul>
+<li>微服务架构与高并发核心。基于Spring Cloud + Nacos构建微服务架构，实现服务注册/配置中心与负载均衡。撮合引擎采用 RocketMQ + Disruptor异步处理订单，支持10万+ TPS；集成WebSocket (Tio)实现实时行情推送。</li>
+<li>安全与分布式系统。设计 OAuth2 + JWT 认证体系，实现跨服务鉴权。基于Snowflake算法设计分布式全局ID系统；通过JetCache + Redis 实现分布式锁与缓存。</li>
+<li>云原生部署与性能优化。使用Docker容器化部署至AWS EC2，集成S3存储/SNS通知。基于Redis List实现K线数据高效管理，支持千万级数据存储；定时任务自动压缩历史数据，存储成本降低40%。</li>
+</ul>
+<div class="entry-title">
+    <h3>轻量级RPC框架</h3> 
+    <a href="https://github.com/Crc011220/RPC">GitHub</a>
+</div>
+<ul>
+<li>高性能网络通信。基于 Netty NIO 实现非阻塞网络通信，提升吞吐量3倍+（对比BIO）；设计自定义协议，支持多序列化方案（Java原生/JSON）；</li>
+<li>服务治理核心机制。集成 Zookeeper 实现服务注册发现，Redis缓存节点数据保障高可用；开发动态代理调用层，简化客户端调用流程；</li>
+<li>流量调度优化。实现多负载均衡算法（随机/轮询）；支持秒级服务熔断与自动流量切换。</li>
+</ul>
+<div class="entry-title">
+    <h3>云计算数据分析平台</h3> 
+</div>
+<ul>
+<li>云原生架构部署。基于 Kubernetes+Docker在NeCTAR云构建高可用集群，通过Fission实现定时数据采集任务（社交媒体平台）。自动扩缩容容器副本，保障资源弹性调度。</li>
+<li>实时搜索引擎开发。构建 Elasticsearch分布式搜索系统，支持千万级数据高效索引与秒级检索。</li>
+<li>智能数据分析引擎。集成 Python NLP工具链（NLTK/VADER/TextBlob），实现情感分析/关键词提取/文本分类任务。Jupyter Notebook 提供动态可视化分析界面。</li>
+</ul>
+<h2 id="%EE%B3%BA-%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD"> 个人技能</h2>
+<ul>
+<li>英语水平：口语流利，可作为工作语言。</li>
+<li>专业技能：Java体系。深度掌握：JVM（内存/GC/类加载）、多线程、集合框架；框架生态：Spring Boot/Spring MVC/MyBatis-Plus（IOC/AOP）。微服务架构。组件能力：Spring Cloud（Nacos/OpenFeign）；消息中间件：RocketMQ/Kafka（死信队列/消息可靠性）。数据库。MySQL：索引优化/事务隔离/锁机制；Redis：核心数据类型/缓存策略（击穿/穿透/雪崩解决方案）；云存储：AWS/阿里云（持有AWS Cloud Practitioner认证）基础设施。容器化：Docker/Kubernetes + Serverless架构；网络协议：TCP/IP模型、HTTP/TCP/UDP/DNS；Linux运维：常用命令/系统管理。扩展能力。设计模式：单例/工厂/策略/观察者/装饰器；AI融合：LangChain/Spring AI基础开发；前端协作：Vue/React/Next.js/TailWind CSS（全栈需求支持）；</li>
+<li>兴趣爱好：萨克斯（学习10年以上），健身（4年以上），国际象棋。</li>
+</ul>
+
+</body>
+</html>
